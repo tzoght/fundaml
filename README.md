@@ -1,3 +1,6 @@
+
+[![codecov](https://codecov.io/github/tzoght/mltz-base/branch/main/graph/badge.svg?token=UB03POGOUB)](https://codecov.io/github/tzoght/mltz-base)
+
 # mltz_base
 
 Base Package for ML related dev
@@ -28,3 +31,5 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## Code Coverage
 * [CodeCov](https://app.codecov.io/github/tzoght/mltz-base) 
+  
+[![codecov](https://codecov.io/github/tzoght/mltz-base/branch/main/graph/badge.svg?token=UB03POGOUB)](https://codecov.io/github/tzoght/mltz-base)
