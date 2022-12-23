@@ -22,3 +22,11 @@ jobs:
 
     - name: Install package
       run: poetry install
+
+    - name: Test with pytest
+      run: poetry run pytest tests/ --cov=pycounts --cov-report=xml
+
+    - name: Use Codecov to track coverage
+      uses: codecov/codecov-action@v2
+      with:
+        files: ./coverage.xml   # coverage report
