@@ -2,6 +2,9 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.9 (2022-12-23)
+
+
 ## v0.1.8 (2022-12-23)
 ### Fix
 * Upload to pypi ([`223de4f`](https://github.com/tzoght/mltz-base/commit/223de4f5966501b7417f3686c911d847cf72d3c9))
