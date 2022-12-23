@@ -3,6 +3,8 @@
 
 [![ci-cd](https://github.com/tzoght/mltz-base/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/tzoght/mltz-base/actions/workflows/ci-cd.yml)
 
+[![Documentation Status](https://readthedocs.org/projects/mltz-base/badge/?version=latest)](https://mltz-base.readthedocs.io/en/latest/?badge=latest)
+
 # mltz_base
 
 Base Package for ML related dev
