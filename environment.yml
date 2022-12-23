@@ -1,0 +1,15 @@
+name: 'mltz_base'
+channels:
+  - conda-forge
+  - districtdatalabs
+  - defaults
+dependencies:
+  - python>=3.11
+  - cookiecutter
+  - numpy
+  - ipykernel
+  - pip>=20
+  - pip:
+    - cookiecutter
+    - docopt-ng
+    - poetry
