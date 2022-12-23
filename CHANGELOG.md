@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.12 (2022-12-23)
+### Fix
+* Making repo public ([`f819021`](https://github.com/tzoght/mltz-base/commit/f81902133503e8cd7d9ba5cdc41241f3e9cebb05))
+
 ## v0.1.11 (2022-12-23)
 ### Fix
 * Renamed readthedocs ([`e3acf01`](https://github.com/tzoght/mltz-base/commit/e3acf010b0eed2516ba88737abaf7f1b07b1fbc1))
