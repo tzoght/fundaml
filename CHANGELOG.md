@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.6 (2022-12-23)
+### Fix
+* Updated readme ([`41b0d72`](https://github.com/tzoght/mltz-base/commit/41b0d723b466c97ba0dc9dbe06fbf2dc7a9b5d84))
+* Removing extra workflow file ([`a838e6f`](https://github.com/tzoght/mltz-base/commit/a838e6fce89673638aaa035c7d66c9627fb2938d))
+
 ## v0.1.5 (2022-12-23)
 ### Fix
 * Added some tests ([`fa84c78`](https://github.com/tzoght/mltz-base/commit/fa84c789b1df844ff772e9097d5bb6d8075ac03d))
