@@ -8,6 +8,7 @@ dependencies:
   - cookiecutter
   - numpy
   - ipykernel
+  - python-semantic-release
   - pip>=20
   - pip:
     - cookiecutter
