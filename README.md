@@ -7,10 +7,11 @@ Base Package for ML related dev
 ```bash
 $ pip install mltz_base
 ```
+from  [Pypi repo](https://pypi.org/manage/project/mltz-base/releases/)
 
 ## Usage
 
-- TODO
+- Coming soon
 
 ## Contributing
 
