@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.7 (2022-12-23)
+### Fix
+* Added links ([`31221b4`](https://github.com/tzoght/mltz-base/commit/31221b4d465aff247d69e3434ef562fc48569887))
+* Verbosity of semver ([`a23e382`](https://github.com/tzoght/mltz-base/commit/a23e382db31376fc199cd194a2cccfbd2a1f578c))
+
 ## v0.1.6 (2022-12-23)
 ### Fix
 * Updated readme ([`41b0d72`](https://github.com/tzoght/mltz-base/commit/41b0d723b466c97ba0dc9dbe06fbf2dc7a9b5d84))
