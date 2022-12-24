@@ -63,9 +63,6 @@ jobs:
     - name: Install package
       run: poetry install
 
-    - name: Build package
-      run: poetry build
-
     - name: Use Python Semantic Release to prepare release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -73,6 +70,9 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           poetry run semantic-release publish
+
+    - name: Build package
+      run: poetry build
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
