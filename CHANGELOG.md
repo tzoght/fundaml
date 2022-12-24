@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.17 (2022-12-24)
+### Fix
+* Build order ([`0bda895`](https://github.com/tzoght/mltz-base/commit/0bda89505542a0d69b2a69d55640b79923ae055a))
+
 ## v0.1.16 (2022-12-24)
 
 
