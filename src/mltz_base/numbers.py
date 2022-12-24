@@ -56,10 +56,9 @@ def binary(number: float):
     print(
         f" - Binary: {sign_str}1.{mantissa[:mantissa_index + 1]} x 2^{exponent_base10:b}"
     )
-    print()
-    print(f"- Sign: {sign} ({'+' if sign == '0' else '-'})")
-    print(f"- Mantissa: {mantissa[:mantissa_index + 1]} ({mantissa_base10})")
-    print(f"- Exponent: {exponent_base10:b} ({exponent_base10})\n")
+    print(f" - Sign: {sign} ({'+' if sign == '0' else '-'})")
+    print(f" - Mantissa: {mantissa[:mantissa_index + 1]} ({mantissa_base10})")
+    print(f" - Exponent: {exponent_base10:b} ({exponent_base10})\n")
 
 
 def calc_spacing(number: float):
