@@ -15,7 +15,7 @@ concurrency:
   
 jobs:
   ci:
-  	environment:
+    environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ${{ matrix.os }}
@@ -53,15 +53,16 @@ jobs:
     - name: Build documentation
       run: poetry run make html --directory docs/
       
-	  - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
           # Upload entire repository
           path: 'docs/_build/html'
           
     - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      id: deployment
+      uses: actions/deploy-pages@v1
+      
   cd:
       # Only run this job if the "ci" job passes
     needs: ci
