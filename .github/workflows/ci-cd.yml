@@ -2,8 +2,22 @@ name: ci-cd
 
 on: [push, pull_request]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+  
 jobs:
   ci:
+  	environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -38,6 +52,16 @@ jobs:
     
     - name: Build documentation
       run: poetry run make html --directory docs/
+      
+	  - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: 'docs/_build/html'
+          
+    - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
   cd:
       # Only run this job if the "ci" job passes
     needs: ci
