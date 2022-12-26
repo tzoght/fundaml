@@ -12,12 +12,12 @@ jobs:
     # Define job steps
     steps:
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
 
     - name: Check-out repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Install poetry
       uses: snok/install-poetry@v1
@@ -29,7 +29,7 @@ jobs:
       run: poetry run pytest tests/ --cov-branch --cov=mltz_base --cov-report=xml
 
     - name: Use Codecov to track coverage
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         flags: unittests # optional
@@ -50,12 +50,12 @@ jobs:
     # Define job steps
     steps:
     - name: Set up Python 3.9
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: 3.9
 
     - name: Check-out repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         fetch-depth: 0
         
