@@ -3,16 +3,16 @@ name: ci-cd
 on: [push, pull_request]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-#permissions:
-# contents: write
-#  pages: write
-#  id-token: write
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
-  
+
 jobs:
   ci:
     environment:
