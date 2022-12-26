@@ -32,3 +32,9 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## Code Coverage
 * [CodeCov](https://app.codecov.io/github/tzoght/mltz-base) 
+
+## Read The Docs
+https://mltz-base.readthedocs.io/en/latest/?badge=latest
+
+## Github Pages
+https://tzoght.github.io/mltz-base/
