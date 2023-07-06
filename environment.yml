@@ -13,6 +13,7 @@ dependencies:
   - ipykernel
   - python-semantic-release
   - mypy
+  - pytorch
   - torchvision
   - torchaudio
   - tensorboard
