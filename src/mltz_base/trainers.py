@@ -7,7 +7,7 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 class NNTrainer:
     
-    SUPPORTED_DEVICES = {'cpu','cuda','cuda:2','mps'}
+    SUPPORTED_DEVICES = {'cpu','cuda','mps'}
     
     def __init__(self,device = 'cpu',
                  model = None,
@@ -28,11 +28,22 @@ class NNTrainer:
         self.writer = SummaryWriter(log_dir)
 
     def with_device(self, device):
-        if device in NNTrainer.SUPPORTED_DEVICES:
-            self.device = device
-        else: 
-            raise TypeError(f'{device} is not supported option config in set_device()')
-        return self
+        if device == 'cpu':
+            self.device = torch.device('cpu')
+        elif device == 'cuda':
+            if torch.cuda.is_available():
+                self.device = torch.device('cuda')
+            else:
+                self.device = torch.device('cpu')
+        elif device == 'mps':
+            if torch.backends.mps.is_available():
+                self.device = torch.device('mps')
+            else:
+                self.device = torch.device('cpu')
+        else:
+            self.device = torch.device('cpu')
+        print(f"Using device: {self.device}")
+    
 
     def with_loss_function(self, loss_function):
         self.loss_function = loss_function

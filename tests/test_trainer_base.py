@@ -44,7 +44,7 @@ class TestTrainerBase(unittest.TestCase):
         optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=weight_decay, betas=(0.9, 0.99), eps=1e-8)
 
         trainer.with_model(model).with_optimizer(optimizer).with_loss_function(loss_fn)
-        trainer.with_scoring_functions({'accuracy':score_accuracy}).with_device('mps')
+        trainer.with_scoring_functions({'accuracy':score_accuracy}).with_device('cuda') # 'mps' or 'cuda' for mac
         # scores = trainer.train_loop(train_dataloader,update_every_n_batches=20,epochs=epochs)
         # scores = trainer.test_loop(test_dataloader,update_every_n_batches=2)
         scores = trainer.train(train_dataloader, test_dataloader,update_every_n_batches=100, epochs=5)
