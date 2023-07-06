@@ -48,10 +48,16 @@ jobs:
 #       uses: snok/install-poetry@v1
 
     - name: Install package
-      run: poetry install
+      run: | 
+        conda init bash
+        conda activate mltz_base
+        poetry install
 
     - name: Test with pytest
-      run: poetry run pytest tests/ --cov-branch --cov=mltz_base --cov-report=xml
+      run: |
+        conda init bash
+        conda activate mltz_base
+        poetry run pytest tests/ --cov-branch --cov=mltz_base --cov-report=xml
 
     - name: Use Codecov to track coverage
       uses: codecov/codecov-action@v3
