@@ -41,14 +41,6 @@ jobs:
         conda init bash
         conda activate mltz_base
 
-    - name: Install package
-      run: | 
-        echo "Initialize Conda"
-        eval "$(conda shell.bash hook)"
-        conda init bash
-        conda activate mltz_base
-        poetry install
-
     - name: Test with pytest
       run: |
         echo "Initialize Conda"
@@ -56,6 +48,14 @@ jobs:
         conda init bash
         conda activate mltz_base
         poetry run pytest tests/ --cov-branch --cov=mltz_base --cov-report=xml
+
+    - name: Install package
+      run: | 
+        echo "Initialize Conda"
+        eval "$(conda shell.bash hook)"
+        conda init bash
+        conda activate mltz_base
+        poetry install
 
     - name: Use Codecov to track coverage
       uses: codecov/codecov-action@v3
