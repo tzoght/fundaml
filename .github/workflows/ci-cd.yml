@@ -19,6 +19,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ${{ matrix.os }}
+    container:
+      image: nvidia/cuda:11.0-base
+      options: --gpus all
     strategy:
       matrix:
         os: [ubuntu-latest]
