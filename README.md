@@ -4,18 +4,29 @@
 
 # mltz_base
 
-Base Package for ML related dev
+The purpose of this module is simply to simplify ML learning and use best practices while developing ML models. 
+
+**Standardization**: The mltz-base project is an attempt to standardize the way ML projects are structured within a team or organization, promoting best practices for organization, testing, and documentation.
+
+**Flexibility**: mltz-base seems is designed with flexibility in mind. Users can likely use different parts of the codebase as needed, and extend or modify components to suit their specific requirements.
+
+**Extensibility**: mltz-base could be used as a starting point for building more complex, domain-specific machine learning libraries. The name mltz-base itself is intended to be a "**base**" or foundation upon which other things can be built.
+
 
 ## Installation
 
 ```bash
-$ pip install mltz_base
+$ pip install mltz-base
 ```
 from  [Pypi repo](https://pypi.org/manage/project/mltz-base/releases/)
 
+## Developers
+
+Please visit [DEVELOPERS.md](DEVELOPERS.md) to set the module for contribution 
+
 ## Usage
 
-- Coming soon
+See [docs](/docs/example.ipynb)
 
 ## Contributing
 
@@ -23,11 +34,11 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`mltz_base` was created by Tony Zoght. It is licensed under the terms of the MIT license.
+`mltz-base` was created by Tony Zoght. It is licensed under the terms of the MIT license.
 
 ## Credits
 
-`mltz_base` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+`mltz-base` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
 
 
 ## Code Coverage
@@ -38,3 +49,4 @@ https://mltz-base.readthedocs.io/en/latest/?badge=latest
 
 ## Github Pages
 https://tzoght.github.io/mltz-base/
+

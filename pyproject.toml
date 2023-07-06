@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "mltz_base"
-version = "0.1.26"
+name = "mltz-base"
+version = "0.1.30"
 description = "Base Package for ML related dev"
 authors = ["Tony Zoght"]
 license = "MIT"

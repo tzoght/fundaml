@@ -1,7 +1,10 @@
+# conda env update --file environment.yml --prune
+# conda env create --file environment.yml 
 name: 'mltz_base'
 channels:
   - conda-forge
   - districtdatalabs
+  - pytorch
   - defaults
 dependencies:
   - python>=3.11
@@ -9,6 +12,11 @@ dependencies:
   - numpy
   - ipykernel
   - python-semantic-release
+  - mypy
+  - torchvision
+  - torchaudio
+  - tensorboard
+  - matplotlib
   - pip>=20
   - pip:
     - cookiecutter
