@@ -28,20 +28,20 @@ class NNTrainer:
         self.writer = SummaryWriter(log_dir)
 
     def with_device(self, device):
-        if device == 'cpu':
-            self.device = torch.device('cpu')
-        elif device == 'cuda':
-            if torch.cuda.is_available():
-                self.device = torch.device('cuda')
-            else:
-                self.device = torch.device('cpu')
-        elif device == 'mps':
-            if torch.backends.mps.is_available():
-                self.device = torch.device('mps')
-            else:
-                self.device = torch.device('cpu')
-        else:
-            self.device = torch.device('cpu')
+        # if device == 'cpu':
+        #     self.device = torch.device('cpu')
+        # elif device == 'cuda':
+        #     if torch.cuda.is_available():
+        #         self.device = torch.device('cuda')
+        #     else:
+        #         self.device = torch.device('cpu')
+        # elif device == 'mps':
+        #     if torch.backends.mps.is_available():
+        #         self.device = torch.device('mps')
+        #     else:
+        #         self.device = torch.device('cpu')
+        # else:
+        #     self.device = torch.device('cpu')
         print(f"Using device: {self.device}")
     
 
