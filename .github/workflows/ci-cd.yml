@@ -1,6 +1,10 @@
 name: ci-cd
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -18,20 +22,13 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ${{ matrix.os }}
-    # container:
-    #   image: nvidia/cuda:12.2.0-devel-ubuntu20.04
-    #   options: --gpus all
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.11]
-    # Define job steps
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.10"
 
     - name: Check-out repository
       uses: actions/checkout@v3
@@ -43,9 +40,6 @@ jobs:
         eval "$(conda shell.bash hook)"
         conda init bash
         conda activate mltz_base
-
-#     - name: Install poetry
-#       uses: snok/install-poetry@v1
 
     - name: Install package
       run: | 
