@@ -26,7 +26,7 @@ jobs:
 
     steps:
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: "3.10"
 
@@ -94,10 +94,10 @@ jobs:
 
     # Define job steps
     steps:
-    - name: Set up Python 3.9
+    - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: 3.10
 
     - name: Check-out repository
       uses: actions/checkout@v3
@@ -108,18 +108,32 @@ jobs:
       uses: snok/install-poetry@v1
 
     - name: Install package
-      run: poetry install
+      run: | 
+        echo "Initialize Conda"
+        eval "$(conda shell.bash hook)"
+        conda init bash
+        conda activate fundaml
+        poetry install
 
     - name: Use Python Semantic Release to prepare release
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+          echo "Initialize Conda"
+          eval "$(conda shell.bash hook)"
+          conda init bash
+          conda activate fundaml      
           git config user.name github-actions
           git config user.email github-actions@github.com
           poetry run semantic-release publish
 
     - name: Build package
-      run: poetry build
+      run: | 
+        echo "Initialize Conda"
+        eval "$(conda shell.bash hook)"
+        conda init bash
+        conda activate fundaml
+        poetry build      
 
     - name: Publish to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
