@@ -1,3 +1,3 @@
 # read version from installed package
 from importlib.metadata import version
-__version__ = version("mltz_base")
+__version__ = version("fundaml")

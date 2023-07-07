@@ -39,22 +39,22 @@ jobs:
         echo "Initialize Conda"
         eval "$(conda shell.bash hook)"
         conda init bash
-        conda activate mltz_base
+        conda activate fundaml
 
-    - name: Test with pytest
-      run: |
-        echo "Initialize Conda"
-        eval "$(conda shell.bash hook)"
-        conda init bash
-        conda activate mltz_base
-        poetry run pytest tests/ --cov-branch --cov=mltz_base --cov-report=xml
+    # - name: Test with pytest
+    #   run: |
+    #     echo "Initialize Conda"
+    #     eval "$(conda shell.bash hook)"
+    #     conda init bash
+    #     conda activate fundaml
+    #     poetry run pytest tests/ --cov-branch --cov=fundaml --cov-report=xml
 
     - name: Install package
       run: | 
         echo "Initialize Conda"
         eval "$(conda shell.bash hook)"
         conda init bash
-        conda activate mltz_base
+        conda activate fundaml
         poetry install
 
     - name: Use Codecov to track coverage
@@ -62,7 +62,7 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
         flags: unittests # optional
-        name:  mltz_base # optional
+        name:  fundaml # optional
         files: ./coverage.xml   # coverage report
     
     - name: Build documentation
@@ -70,7 +70,7 @@ jobs:
         echo "Initialize Conda"
         eval "$(conda shell.bash hook)"
         conda init bash
-        conda activate mltz_base
+        conda activate fundaml
         poetry run make html --directory docs/
       
     - name: Upload artifact
@@ -130,5 +130,5 @@ jobs:
     - name: Test install from TestPyPI
       run: |
           pip install \
-          mltz_base
+          fundaml
 

@@ -10,7 +10,7 @@ def print_basic_eda(df,shape=True,info=True,describe=True,null=True,na=True,dupl
     
     Examples
     --------
-    >>> from mltz_base import eda
+    >>> from fundaml import eda
     >>> eda.print_basic_eda(df)
     """
     sep = "----------------------------------------\n"

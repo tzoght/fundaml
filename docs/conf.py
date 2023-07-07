@@ -6,8 +6,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"mltz_base"
-copyright = u"2022, Tony Zoght"
+project = u"fundaml"
+copyright = u"2023, Tony Zoght"
 author = u"Tony Zoght"
 
 # -- General configuration ---------------------------------------------------

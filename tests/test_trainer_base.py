@@ -1,6 +1,6 @@
-from mltz_base.models import SampleNNClassifier
-from mltz_base.trainers import NNTrainer
-from mltz_base.scores import score_accuracy
+from fundaml.models import SampleNNClassifier
+from fundaml.trainers import NNTrainer
+from fundaml.scores import score_accuracy
 import unittest
 import torch
 from torch import Tensor

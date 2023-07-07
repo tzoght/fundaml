@@ -1,4 +1,4 @@
-# Developer Guide to mltz-base
+# Developer Guide to fundaml
 
 ## Initial Setup
 
@@ -18,14 +18,14 @@ This document provides guidelines for setting up and contributing to the project
 
     3.3 Activate the environment
 
-    `conda activate mltz_base`
+    `conda activate fundaml`
 
 4. Install [Poetry](https://python-poetry.org/docs/)
 
 
 ## Project Structure
 
-- `src/mltz_base`: This is where all the source code resides. It includes scripts for data exploration (`eda.py`), models (`models.py`), metrics/scores (`scores.py`), and training models (`trainers.py`).
+- `src/fundaml`: This is where all the source code resides. It includes scripts for data exploration (`eda.py`), models (`models.py`), metrics/scores (`scores.py`), and training models (`trainers.py`).
 
 - `tests`: This directory contains all the test cases for the source code.
 
