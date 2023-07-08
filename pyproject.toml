@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fundaml"
-version = "0.1.28"
+version = "0.1.29"
 description = "A foundational machine learning library designed to streamline the end-to-end process of developing and deploying machine learning models. FundAML offers a broad array of tools and utilities for data preprocessing, model training, evaluation, and deployment, making it a fundamental solution for machine learning tasks."
 authors = ["Tony Zoght"]
 license = "MIT"
