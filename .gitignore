@@ -130,3 +130,6 @@ dmypy.json
 
 # tensorboard
 events.out.*
+
+# docs/data
+docs/data
