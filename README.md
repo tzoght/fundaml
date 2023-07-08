@@ -18,15 +18,15 @@ The purpose of this module is simply to simplify ML learning and use best practi
 ```bash
 $ pip install fundaml
 ```
-from  [Pypi repo](https://pypi.org/manage/project/fundaml/releases/)
+from  [Pypi repo](https://pypi.org/project/fundaml)
 
 ## Developers
 
-Please visit [DEVELOPERS.md](DEVELOPERS.md) to set the module for contribution 
+Please visit [DEVELOPERS.md](https://github.com/tzoght/fundaml/blob/main/DEVELOPERS.md) to set the module for contribution 
 
 ## Usage
 
-See [docs](/docs/example.ipynb)
+See [docs](https://github.com/tzoght/fundaml/blob/main/docs/example.ipynb)
 
 ## Contributing
 
