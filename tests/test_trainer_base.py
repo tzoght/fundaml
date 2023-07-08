@@ -1,5 +1,5 @@
 from fundaml.models import SampleNNClassifier
-from fundaml.trainers import NNTrainer
+from fundaml.trainers import NNTrainer, get_available_devices
 from fundaml.scores import score_accuracy
 import unittest
 import torch
@@ -43,12 +43,13 @@ class TestTrainerBase(unittest.TestCase):
         # optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
         optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=weight_decay, betas=(0.9, 0.99), eps=1e-8)
 
+        print(f"Available devices on this machine: {get_available_devices()}")
         trainer.with_model(model).with_optimizer(optimizer).with_loss_function(loss_fn)
-        trainer.with_scoring_functions({'accuracy':score_accuracy}).with_device('mps')
+        trainer.with_scoring_functions({'accuracy':score_accuracy}).with_device('cpu')
         # scores = trainer.train_loop(train_dataloader,update_every_n_batches=20,epochs=epochs)
         # scores = trainer.test_loop(test_dataloader,update_every_n_batches=2)
-        scores = trainer.train(train_dataloader, test_dataloader,update_every_n_batches=100, epochs=5)
-        print(scores)
+        scores = trainer.train_test_loop(train_dataloader, test_dataloader,update_every_n_batches=100, epochs=5)
+        # print(scores)
         
 if __name__ == '__main__':
     unittest.main()
