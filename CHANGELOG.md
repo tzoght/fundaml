@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.32 (2023-07-09)
+
+### Fix
+
+* Docs/requirements.txt to reduce vulnerabilities ([#4](https://github.com/tzoght/fundaml/issues/4)) ([`b892b16`](https://github.com/tzoght/fundaml/commit/b892b169d7156c2470d266e874e877ba41e40d5e))
+* Docs/requirements.txt to reduce vulnerabilities ([#3](https://github.com/tzoght/fundaml/issues/3)) ([`02e60c4`](https://github.com/tzoght/fundaml/commit/02e60c4d8474aa673f02a65556fef2382fe4cf16))
+* Docs/requirements.txt to reduce vulnerabilities ([#2](https://github.com/tzoght/fundaml/issues/2)) ([`95aeda8`](https://github.com/tzoght/fundaml/commit/95aeda8943821f08e322cf77b4411047afba861e))
+
 ## v0.1.31 (2023-07-09)
 
 
