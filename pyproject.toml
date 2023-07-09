@@ -1,15 +1,18 @@
 [tool.poetry]
-name = "mltz_base"
-version = "0.1.26"
-description = "Base Package for ML related dev"
+name = "fundaml"
+version = "0.1.31"
+description = "A foundational machine learning library designed to streamline the end-to-end process of developing and deploying machine learning models. FundAML offers a broad array of tools and utilities for data preprocessing, model training, evaluation, and deployment, making it a fundamental solution for machine learning tasks."
 authors = ["Tony Zoght"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9"
+python = ">=3.10"
 numpy = ">=1.24.0"
 pandas = ">=1.4.0"
+torchvision = "^0.15.2"
+torchaudio = "^2.0.2"
+torch = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = ">=6.2.5"

@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# tensorboard
+events.out.*
+
+# docs/data
+docs/data
