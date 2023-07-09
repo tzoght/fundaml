@@ -1,4 +1,4 @@
-from mltz_base.eda import print_basic_eda
+from fundaml.eda import print_basic_eda
 import pandas as pd
 
 def test_basic_eda():

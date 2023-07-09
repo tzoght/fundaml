@@ -40,10 +40,10 @@ If you are proposing a feature:
 
 ## Get Started!
 
-Ready to contribute? Here's how to set up `mltz_base` for local development.
+Ready to contribute? Here's how to set up `fundaml` for local development.
 
-1. Download a copy of `mltz_base` locally.
-2. Install `mltz_base` using `poetry`:
+1. Download a copy of `fundaml` locally.
+2. Install `fundaml` using `poetry`:
 
     ```console
     $ poetry install
@@ -69,7 +69,7 @@ Before you submit a pull request, check that it meets these guidelines:
 
 ## Code of Conduct
 
-Please note that the `mltz_base` project is released with a
+Please note that the `fundaml` project is released with a
 Code of Conduct. By contributing to this project you agree to abide by its terms.
 
 

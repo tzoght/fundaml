@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=mltz_base
+set SPHINXPROJ=fundaml
 
 if "%1" == "" goto help
 
