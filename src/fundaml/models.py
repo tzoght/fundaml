@@ -1,3 +1,4 @@
+import torch
 import torch.nn as nn
 from abc import ABC, abstractmethod
 from torch.nn import functional as F
@@ -55,7 +56,8 @@ class SimpleCNN(AbstractNN):
         self.conv2 = nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1)
         self.dropout1 = nn.Dropout2d(0.25)
         self.dropout2 = nn.Dropout2d(0.5)
-        self.fc1 = nn.Linear(9216, 128)
+        self.flatten = nn.Flatten() 
+        self.fc1 = nn.Linear(12544, 128)
         self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
@@ -65,7 +67,7 @@ class SimpleCNN(AbstractNN):
         x = F.relu(x)
         x = F.max_pool2d(x, 2)
         x = self.dropout1(x)
-        x = nn.flatten(x, 1)
+        x = self.flatten(x)
         x = self.fc1(x)
         x = F.relu(x)
         x = self.dropout2(x)
@@ -79,18 +81,22 @@ class SimpleRNN(AbstractNN):
     """
     def __init__(self, short_name, input_size=28, hidden_size=128, num_layers=2, num_classes=10):
         super(SimpleRNN, self).__init__(short_name)
+        self.input_size = input_size
         self.hidden_size = hidden_size
         self.num_layers = num_layers
         self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
-        self.fc = nn.Linear(hidden_size*28, num_classes)
+        self.fc = nn.Linear(hidden_size, num_classes)
     
     def forward(self, x):
-        # Set an initial hidden and cell state
-        h0 = nn.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device) 
-        
-        # Forward propagate the RNN
+        # Set initial hidden and cell states 
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
+
+        # Reshape input to (batch_size, sequence_length, input_size)
+        x = x.view(x.size(0), -1, self.input_size)
+
+        # Forward propagate RNN
         out, _ = self.rnn(x, h0)
-        
-        # Pass the output of the last time step to the classifier
+
+        # Decode the hidden state of the last time step
         out = self.fc(out[:, -1, :])
         return out
