@@ -46,12 +46,12 @@ class SampleNNClassifier(AbstractNN):
         
         return logits
 
-class SimpleCNN(AbstractNN):
+class SampleCNN(AbstractNN):
     """
-    A simple Convolutional Neural Network (CNN) model.
+    A sample Convolutional Neural Network (CNN) model.
     """
     def __init__(self, short_name):
-        super(SimpleCNN, self).__init__(short_name)
+        super(SampleCNN, self).__init__(short_name)
         self.conv1 = nn.Conv2d(1, 32, kernel_size=3, stride=1, padding=1)
         self.conv2 = nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1)
         self.dropout1 = nn.Dropout2d(0.25)
@@ -75,12 +75,12 @@ class SimpleCNN(AbstractNN):
         return output
 
 
-class SimpleRNN(AbstractNN):
+class SampleRNN(AbstractNN):
     """
-    A simple Recurrent Neural Network (RNN) model.
+    A sample Recurrent Neural Network (RNN) model.
     """
     def __init__(self, short_name, input_size=28, hidden_size=128, num_layers=2, num_classes=10):
-        super(SimpleRNN, self).__init__(short_name)
+        super(SampleRNN, self).__init__(short_name)
         self.input_size = input_size
         self.hidden_size = hidden_size
         self.num_layers = num_layers
