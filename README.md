@@ -34,7 +34,7 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## License
 
-`fundaml` was created by Tony Zoght. It is licensed under the terms of the MIT license.
+`fundaml` is licensed under the terms of the MIT license.
 
 ## Credits
 
