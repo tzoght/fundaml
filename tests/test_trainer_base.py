@@ -1,4 +1,4 @@
-from fundaml.models import SampleNNClassifier, SimpleCNN, SimpleRNN
+from fundaml.models import SampleNNClassifier, SampleCNN, SampleRNN
 from fundaml.trainers import NNTrainer, get_available_devices
 from fundaml.scores import score_accuracy
 import unittest
@@ -36,7 +36,7 @@ class TestTrainerBase(unittest.TestCase):
         train_dataloader = DataLoader(training_data, batch_size=batch_size)
         test_dataloader = DataLoader(test_data, batch_size=batch_size)        
         
-        models = [SampleNNClassifier("Sample_NN_Classifier"), SimpleCNN("Simple_CNN"), SimpleRNN("Simple_RNN")]
+        models = [SampleNNClassifier("Sample_NN_Classifier"), SampleCNN("Sample_CNN"), SampleRNN("Sample_RNN")]
         
         for model in models:
             loss_fn = nn.CrossEntropyLoss()
