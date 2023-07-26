@@ -6,7 +6,6 @@ channels:
   - pytorch
   - anaconda
   - defaults
-  # - districtdatalabs  
 dependencies:
   - ipykernel
   - python=3.10
@@ -15,7 +14,6 @@ dependencies:
   - numpy
   - ipykernel
   - python-semantic-release
-  - mypy
   - pytorch
   - torchvision
   - torchaudio
@@ -27,4 +25,6 @@ dependencies:
     - poetry
     - torch-summary
     - torchviz  
-    - tensorboard      
+    - tensorboard
+    - tokenizers 
+    - transformers  
