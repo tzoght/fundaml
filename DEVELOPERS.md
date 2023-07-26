@@ -49,7 +49,7 @@ To run specific tests directly, for example `tests/test_trainer_base.py`, follow
 
 `poetry install`
 
-`python src/test_trainer_base.py`
+`python tests/test_trainer_base.py`
 
 Remember to keep an eye on `_tb_log_dir` for training logs using the TesnsorBoard logger
 
