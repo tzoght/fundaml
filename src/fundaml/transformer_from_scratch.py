@@ -1,17 +1,22 @@
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
-
-import unittest
+import numpy as np
 
 def get_device():
-    # Check CUDA availability
     if torch.cuda.is_available():
         return torch.device('cuda')
     elif torch.backends.mps.is_available():
         return torch.device('mps')
     else:
         return torch.device('cpu')    
+
+def sinusoidal_positional_encoding(max_length, embed_size):
+    PE = torch.zeros(max_length, embed_size)
+    position = torch.arange(0, max_length, dtype=torch.float).unsqueeze(1)
+    div_term = torch.exp(torch.arange(0, embed_size, 2).float() * -(np.log(10000.0) / embed_size))
+    PE[:, 0::2] = torch.sin(position * div_term)
+    PE[:, 1::2] = torch.cos(position * div_term)
+    return PE
 
 class MultiHeadSelfAttentionBlock(nn.Module):
     """
@@ -265,7 +270,7 @@ class Encoder(nn.Module):
 
         # Embeddings for the input words and positional embeddings
         self.word_embedding = nn.Embedding(src_vocab_size, embed_size)
-        self.position_embedding = nn.Embedding(max_length, embed_size)
+        self.position_embedding = sinusoidal_positional_encoding(max_length, embed_size).to(self.device)
 
         # Transformer blocks for the encoder layers
         self.layers = nn.ModuleList(
@@ -301,11 +306,8 @@ class Encoder(nn.Module):
         x = x.to(self.device)
         mask = mask.to(self.device)
 
-        # Create positional indices
-        positions = torch.arange(0, seq_length).expand(N, seq_length).to(self.device)
-
         # Combine word embeddings and positional embeddings
-        embeddings = self.word_embedding(x) + self.position_embedding(positions)
+        embeddings = self.word_embedding(x) + self.position_embedding[:seq_length, :]
 
         # Apply dropout to the combined embeddings
         out = self.dropout(embeddings)
@@ -413,7 +415,7 @@ class Decoder(nn.Module):
 
         # Embeddings for the input words and positional embeddings
         self.word_embedding = nn.Embedding(trg_vocab_size, embed_size)
-        self.position_embedding = nn.Embedding(max_length, embed_size)
+        self.position_embedding = sinusoidal_positional_encoding(max_length, embed_size).to(self.device)
 
         # Decoder blocks for the decoder layers
         self.layers = nn.ModuleList(
@@ -459,7 +461,7 @@ class Decoder(nn.Module):
         positions = torch.arange(0, seq_length).expand(N, seq_length).to(self.device)
 
         # Combine word embeddings and positional embeddings
-        embeddings = self.word_embedding(x) + self.position_embedding(positions)
+        embeddings = self.word_embedding(x) + self.position_embedding[:seq_length, :]
 
         # Apply dropout to the combined embeddings
         x = self.dropout(embeddings)
