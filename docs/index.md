@@ -6,6 +6,7 @@
 :hidden:
 
 example.ipynb
+transformer_from_scratch.ipynb
 changelog.md
 contributing.md
 conduct.md
